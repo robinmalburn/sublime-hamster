@@ -6,7 +6,7 @@ import subprocess
 
 class HamsterStopCommand(sublime_plugin.WindowCommand):
 	def run(self):
-		#check if we really to cancel the activity
+		#check if we really want to cancel the activity
 		cancel = sublime.ok_cancel_dialog("Are you sure you want to stop tracking the current activity?")
 		if cancel is True:
 			#use hamster-cli to stop the current activity
@@ -19,7 +19,7 @@ class HamsterStartCommand(sublime_plugin.WindowCommand):
 		window.show_input_panel("caption", "initial_text", self._on_done, None, self._on_cancel)
 
 	def _on_cancel(self):
-		#nothing to do here, so simple return false
+		#nothing to do here, so simply return false
 		return False
 
 	def _on_done(self, str):
