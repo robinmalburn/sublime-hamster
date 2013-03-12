@@ -1,0 +1,34 @@
+[
+	{
+		"caption" : "Preferences",
+		"id" : "preferences",
+		"mnemonic": "n",
+		"children" : 
+		[
+			{
+				"caption" : "Package Settings",
+				"id" : "package-settings",
+				"mnemonic": "P",
+				"children" :
+				[
+					{
+						"caption" :  "Sublime Hamster",
+						"children" : 
+						[
+							{
+								"command" : "open_file",
+								"args" : { "file" : "${packages}/sublime-hamster/sublime-hamster.sublime-settings"},
+								"caption" : "Settings - Default"
+							},
+							{
+								"command" : "open_file",
+								"args" : { "file" : "${packages}/User/sublime-hamster.sublime-settings"},
+								"caption" : "Settings - User"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

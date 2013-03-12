@@ -1,0 +1,14 @@
+{
+	/**
+	 * Should a confirmation dialog be shown when stopping the current activity
+	 * @param boolean
+	 */
+	"confirm_stop" : true,
+
+	/**
+	 * Location of the python hamster dbus bridge.
+	 * ${packages} will be replaced with Sublime's package path
+	 * @param string
+	 */
+	"hamster_dbus_bridge" : "${packages}/sublime-hamster/hamster_dbus_bridge.py"
+}
