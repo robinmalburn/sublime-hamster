@@ -121,7 +121,7 @@ class HamsterStartCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		"""Show a prompt allowing the user to start a new activity"""
 		window = sublime.active_window()
-		window.show_input_panel("Start Activity:", "", self._on_done, None, self._on_cancel)
+		window.show_input_panel("Start Activity (format: activity[@category[ description, [#tag1 #tag2 #etc]]] ):", "", self._on_done, None, self._on_cancel)
 
 	def _on_cancel(self):
 		"""An on_cancel handler, required for show_input_panel.  There's actually nothing to be cancelled here, so just returns False"""
@@ -129,5 +129,6 @@ class HamsterStartCommand(sublime_plugin.WindowCommand):
 
 	def _on_done(self, str):
 		"""Once input is done, start the new activity"""
-		hamster_cli_start(str)
-		sublime.status_message(str)
+		if len(str) > 0:
+			hamster_cli_start(str)
+			sublime.status_message(str)

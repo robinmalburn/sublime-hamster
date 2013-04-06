@@ -1,16 +1,13 @@
 [
 	{
-		"id": "hamster_start",
 		"caption": "Hamster: Start Activity",
 		"command": "hamster_start"
 	},
 	{
-		"id": "hamster_stop",
 		"caption": "Hamster: Stop Activity",
 		"command": "hamster_stop"
 	},
 	{
-		"id": "hamster_switch",
 		"caption": "Hamster: Switch Activities",
 		"command": "hamster_switch"
 	},
