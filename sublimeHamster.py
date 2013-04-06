@@ -14,7 +14,6 @@ def hamster_cli_stop():
 	"""End the current activity"""
 	subprocess.Popen(["hamster-cli", "stop"])
 
-
 class HamsterSwitchCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		"""Switch to a previous Hamster activity"""
@@ -42,9 +41,10 @@ class HamsterSwitchCommand(sublime_plugin.WindowCommand):
 
 	def _on_done(self, index):
 		"""on_done handler, parses the chosen fact and starts the activity"""
-		fact = self.facts[index]
-		str_fact = self._stringifiy_fact(fact)
-		hamster_cli_start(str_fact)
+		if index > -1:
+			fact = self.facts[index]
+			str_fact = self._stringifiy_fact(fact)
+			hamster_cli_start(str_fact)
 
 	def _stringifiy_fact(self, fact):
 		"""Convert a fact object into a hamster-cli friendly string supporting activity, category, description and tags"""
@@ -81,7 +81,7 @@ class HamsterStartCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		"""Show a prompt allowing the user to start a new activity"""
 		window = sublime.active_window()
-		window.show_input_panel("Start Activity:", "", self._on_done, None, self._on_cancel)
+		window.show_input_panel("Start Activity (format: activity[@category[ description, [#tag1 #tag2 #etc]]] ):", "", self._on_done, None, self._on_cancel)
 
 	def _on_cancel(self):
 		"""An on_cancel handler, required for show_input_panel.  There's actually nothing to be cancelled here, so just returns False"""
