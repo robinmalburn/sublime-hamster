@@ -13,5 +13,13 @@
 		"id": "hamster_switch",
 		"caption": "Hamster: Switch Activities",
 		"command": "hamster_switch"
+	},
+	{
+		"caption": "Hamster: List",
+		"command": "hamster_list"
+	},
+	{
+		"caption": "Hamster: Show Current",
+		"command": "hamster_current"
 	}
 ]
